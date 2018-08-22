@@ -54,6 +54,15 @@ class Album extends Component {
       this.play();
     }
 
+    handleSkipClick(){
+      const album = this.state.album.songs;
+      const currentIndex = album.findIndex(song => this.state.currentSong === song);
+      const newIndex = Math.min(4, currentIndex + 1);
+      const newSong = album[newIndex];
+      this.setSong(newSong);
+      this.play();
+    }
+
     onMouseEnter(index){
       this.setState({isHovered: index})
     }
@@ -70,7 +79,7 @@ class Album extends Component {
         }if(this.state.isHovered === index && this.state.isPlaying === true && this.state.currentSong === song){
           return <span className="ion-md-pause" />;
         }else{
-          console.log('out');
+
         };
         return index + 1;
     }
@@ -113,6 +122,7 @@ class Album extends Component {
         currentSong={this.state.currentSong}
         handleSongClick={() => this.handleSongClick(this.state.currentSong)}
         handlePrevClick={() => this.handlePrevClick()}
+        handleSkipClick={() => this.handleSkipClick()}
       />
     </section>
     );

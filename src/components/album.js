@@ -14,7 +14,7 @@ class Album extends Component {
       album: album,
       currentSong: album.songs[0],
       currentTime: 0,
-      currentVolume: 0.01,
+      currentVolume: 0.5,
       duration: album.songs[0].duration,
       isPlaying: false,
       isHovered: false
@@ -105,11 +105,13 @@ class Album extends Component {
    }
 
     formatTime(duration){
+      const minutes = Math.floor(duration / 60);
+      const seconds = Math.floor(duration - minutes * 60);
       if(duration.isNaN){
              return "-:--";
+           } else if(seconds < 10){
+             return minutes + ":" +0+seconds;
            } else {
-             const minutes = Math.floor(duration / 60);
-             const seconds = Math.floor(duration - minutes * 60);
              return minutes + ":" + seconds;
            }
 

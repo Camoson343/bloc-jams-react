@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
+
 class Album extends Component {
   constructor(props) {
     super(props);
@@ -141,7 +142,6 @@ class Album extends Component {
 
 
 
-
   render() {
     return (
       <section className="album">
@@ -153,7 +153,8 @@ class Album extends Component {
           <div id="release-info">{this.state.album.releaseInfo}</div>
         </div>
        </section>
-       <table id="song-list">
+      <div id="songlist-playerbar">
+       <table className="table-hover" id="song-list">
         <colgroup>
           <col id="song-number-column" />
           <col id="song-title-column" />
@@ -185,6 +186,7 @@ class Album extends Component {
         handleVolumeChange={(e) => this.handleVolumeChange(e)}
         formatTime={(duration) => this.formatTime(duration)}
       />
+      </div>
     </section>
     );
   }

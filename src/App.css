@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  border-style: solid;
+  border-width: thick;
+  background-color: purple;
 }
 
 .App-logo {
@@ -22,7 +25,41 @@
   font-size: large;
 }
 
+.Album{
+  background-color: #808080;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#album-cover-art {
+  border-radius: 50%;
+
+}
+
+#song-list{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+}
+
+#library-img{
+  border-radius: 50%;
+  padding: 20px;
+  width: 280px;
+}
+
+#landing-link{
+  margin: 20px;
+}
+
+#library-link{
+  margin: 20px;
+}
+
+.table-hover{
+  color: blue;
 }
